@@ -2,7 +2,7 @@
   <AnimBox
     ref="cat"
     class="box-cat3"
-    img="img/rantekunn.svg"
+    img="img/rantekunn-mozaiku.svg"
     :w="size" :h="size"
     :x="100" :y="groundY"
     :ox="50" :oy="100"
