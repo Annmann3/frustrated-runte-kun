@@ -1,15 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="stage" @click="moveRuntekun">
+      <RuntekunMove ref="runtekun" />
+    </div>
+    <!--
+    <h3><a id="demo-css-4"></a>応用：複雑な人物のキャラクター</h3>
+    <div class="stage" @click.self="tiltChara" @dblclick="jumpChara">
+      <div class="note">ステージ内クリックで首を傾げて、ダブルクリックでジャンプします</div>
+      <MyChara ref="chara" class="chara" />
+    </div>
+    -->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RuntekunMove from './components/RuntekunMove.vue'
+//import MyChara from './components/MyChara.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    RuntekunMove
+    //MyChara
+  },
+  methods: {
+    moveRuntekun (ev) {
+      this.$refs.runtekun.moveTo(ev.offsetX, ev.offsetY)
+    },
+    /*
+    tiltChara (ev) {
+      const x = (ev.offsetX / ev.target.offsetWidth - 0.5)
+      this.$refs.chara.tilt(x)
+    },
+    jumpChara (ev) {
+      this.$refs.chara.jump(60)
+      console.log(ev)
+    }
+    */
   }
 }
 </script>
@@ -22,5 +49,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.stage {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border: 1px solid #aaa;
+  overflow: hidden;
 }
 </style>
