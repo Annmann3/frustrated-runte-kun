@@ -1,4 +1,5 @@
 <template>
+
   <div class="status-bar">
     <div class="runte-item">
     </div>
@@ -12,14 +13,22 @@
     :x="100" :y="groundY"
     :ox="50" :oy="100"
   />
+  <RandomFalls
+          :speed="300"
+          :max="50" 
+          :interval="400"
+          class="text-6xl opacity-50" 
+          >X</RandomFalls>
 </template>
 
 <script>
 import AnimBox from './AnimBox'
+import RandomFalls from './RandomFalls.vue'
 
 export default {
   components: {
-    AnimBox
+    AnimBox,
+    RandomFalls
   },
   data () {
     return {

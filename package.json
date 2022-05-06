@@ -25,7 +25,13 @@
   },
   "eslintConfig": {
     "root": true,
-    "env": {
+    "globals": {
+      "defineProps": "readonly",
+      "defineEmits": "readonly",
+      "defineExpose": "readonly",
+      "withDefaults": "readonly"
+    },
+  "env": {
       "node": true
     },
     "extends": [

@@ -12,40 +12,35 @@
       <slot />
   </fall>
 </template>
-<script setup lang="ts">
+
+<script setup>
 import { ref, watch } from 'vue'
-const props = defineProps<{
-  speed: number
-  interval: number
-  max: number
-}>()
-interface FallText {
-  id: string
-  x: number
-  y: number
-  rotate: number
-  scale: number
-}
-const fallTexts = ref<FallText[]>([])
+let props = defineProps({
+  speed: Number,
+  interval: Number,
+  max: Number
+});
+
+let fallTexts = ref([]);
 const generateInterval = () => setInterval(() => {
-  fallTexts.value.push({
-    id: new Date().getTime().toString(),
-    x: Math.round((Math.random() * 980)) - 50,
-    y: -Math.round((Math.random() * 100)) - 100,
-    rotate: Math.round((Math.random() * 360)),
-    scale: -1,
-  })
-}, props.interval)
+    fallTexts.value.push({
+        id: new Date().getTime().toString(),
+        x: Math.round((Math.random() * 980)) - 50,
+        y: -Math.round((Math.random() * 100)) - 100,
+        rotate: Math.round((Math.random() * 360)),
+        scale: -1,
+    });
+}, props.interval);
 setInterval(() => {
-  if (fallTexts.value.length > props.max) {
-    for (; fallTexts.value.length > props.max;) {
-      fallTexts.value.shift()
+    if (fallTexts.value.length > props.max) {
+        for (; fallTexts.value.length > props.max;) {
+            fallTexts.value.shift();
+        }
     }
-  }
-}, 10)
-const interval = ref(generateInterval())
+}, 10);
+const interval = ref(generateInterval());
 watch(() => props.interval, () => {
-  clearInterval(interval.value)
-  interval.value = generateInterval()
-})
+    clearInterval(interval.value);
+    interval.value = generateInterval();
+});
 </script>
