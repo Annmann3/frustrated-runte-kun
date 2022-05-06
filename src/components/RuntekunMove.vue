@@ -1,4 +1,9 @@
 <template>
+  <div class="status-bar">
+    <div class="runte-item">
+    </div>
+    <span class="item-count">X 0</span>
+  </div>
   <AnimBox
     ref="cat"
     class="box-cat3"
@@ -46,5 +51,21 @@ export default {
 <style scoped>
 .box-cat3 {
   margin-left: -40px;
+}
+.status-bar {
+  margin: 5px;
+  float: left;
+}
+.runte-item {
+  display: inline-block;
+  background-image: url("../../public/img/ranteT.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.item-count {
+  display: inline-block;
+  padding-bottom: 5px;
 }
 </style>

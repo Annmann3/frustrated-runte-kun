@@ -1,6 +1,12 @@
 <template>
   <div id="app">
     <div class="stage" @click="moveRuntekun">
+      <random-falls
+          :speed="300"
+          :max="50" 
+          :interval="400"
+          class="text-6xl opacity-50" 
+          >🐪</random-falls>
       <RuntekunMove ref="runtekun" />
     </div>
     <!--
@@ -15,12 +21,14 @@
 
 <script>
 import RuntekunMove from './components/RuntekunMove.vue'
+import RandomFalls from './components/RandomFalls.vue'
 //import MyChara from './components/MyChara.vue'
 
 export default {
   name: 'App',
   components: {
-    RuntekunMove
+    RuntekunMove,
+    RandomFalls
     //MyChara
   },
   methods: {
@@ -53,7 +61,7 @@ export default {
 .stage {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 400px;
   border: 1px solid #aaa;
   overflow: hidden;
 }
