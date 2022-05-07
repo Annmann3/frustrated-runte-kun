@@ -36,6 +36,7 @@
 <script>
 import AnimBox from './AnimBox'
 import RandomFalls from './RandomFalls.vue'
+import playSound from '../assets/playSound'
 
 export default {
   components: {
@@ -61,6 +62,7 @@ export default {
       await cat.animTo({ x: x - this.size, r: 20 * rotationDir }, 500 + this.delayTime) // 横移動+回転
       await cat.animTo({ r: 0 }, 100 + this.delayTime) // 回転を戻す
       await cat.animTo({ y: 20, sy: 0.8 }, 300 + this.delayTime) // ジャンプの「溜め」
+      playSound('jump')
       await cat.animTo({ y: -jumpHeight, sy: 1.2 }, 200 + this.delayTime) // ジャンプ往き+伸び
       await cat.animTo({ y: 0, sy: 0.8 }, 200 + this.delayTime) // ジャンプ戻り+縮み
       await cat.animTo({ sy: 1.0 }, 100 + this.delayTime) // 縮みを戻す
