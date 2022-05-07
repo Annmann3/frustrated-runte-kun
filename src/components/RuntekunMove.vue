@@ -18,7 +18,19 @@
           :max="50" 
           :interval="400"
           class="text-6xl opacity-50" 
-          >X</RandomFalls>
+          ><img src="../../public/img/ranteT.png"></RandomFalls>
+  <RandomFalls
+          :speed="200"
+          :max="10" 
+          :interval="1000"
+          class="text-6xl opacity-50" 
+          >Tシャツ欲しい~</RandomFalls>
+  <RandomFalls
+          :speed="300"
+          :max="5" 
+          :interval="1000"
+          class="text-6xl opacity-50" 
+          ><img src="../../public/img/party_parrot.gif"></RandomFalls>
 </template>
 
 <script>
@@ -76,5 +88,9 @@ export default {
 .item-count {
   display: inline-block;
   padding-bottom: 5px;
+}
+img {
+  width: 40px;
+  height: 40px;
 }
 </style>

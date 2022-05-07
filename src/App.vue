@@ -21,7 +21,6 @@ export default {
   name: 'App',
   components: {
     RuntekunMove
-    //MyChara
   },
   methods: {
     moveRuntekun (ev) {

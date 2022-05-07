@@ -16,13 +16,14 @@
 <script setup>
 import { ref, watch } from 'vue'
 import fall from './TheFall.vue'
-let props = defineProps({
+
+const props = defineProps({
   speed: Number,
   interval: Number,
   max: Number
 });
 
-let fallTexts = ref([]);
+const fallTexts = ref([]);
 const generateInterval = () => setInterval(() => {
     fallTexts.value.push({
         id: new Date().getTime().toString(),

@@ -6,9 +6,9 @@
 
 <script setup>
 import { computed } from 'vue'
-const height = 400;
 
-let props = defineProps({
+const height = 400; //表示範囲の高さ
+const props = defineProps({
   speed: Number,
   x: Number,
   y: Number,
