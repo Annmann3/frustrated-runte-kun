@@ -9,12 +9,13 @@
       :speed="props.speed"
       v-bind="$attrs"
       >
-      <slot />
+      <slot></slot>
   </fall>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue'
+import fall from './TheFall.vue'
 let props = defineProps({
   speed: Number,
   interval: Number,
