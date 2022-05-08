@@ -4,6 +4,8 @@
     <div class="runte-item">
     </div>
     <span class="item-count">X 0</span>
+
+    <TheTimer />
   </div>
   <AnimBox
     ref="cat"
@@ -37,11 +39,13 @@
 import AnimBox from './AnimBox'
 import RandomFalls from './RandomFalls.vue'
 import playSound from '../assets/playSound'
+import TheTimer from './TheTimer.vue'
 
 export default {
   components: {
     AnimBox,
-    RandomFalls
+    RandomFalls,
+    TheTimer
   },
   data () {
     return {
