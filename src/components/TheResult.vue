@@ -12,6 +12,7 @@
         class="text-6xl opacity-50" 
         ><img src="../../public/img/party_parrot.gif"></RandomFalls>
   </div>
+  <router-link to="/">TOPページへ</router-link>
 
   
 </template>

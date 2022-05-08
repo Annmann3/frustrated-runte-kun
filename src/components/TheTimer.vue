@@ -17,9 +17,14 @@ export default {
   data() {
     return {
       sec: 20,
-      timerOn: true,
+      timerOn: false,
       timerObj: null,
     }
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.start();
+  })
   },
   methods: {
     count: function() {
