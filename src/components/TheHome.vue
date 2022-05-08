@@ -3,9 +3,9 @@
     <h3>服をなくしてしまったランテくんを操作して、服を手に入れてあげましょう</h3>
     <h4>遊び方</h4>
     <p>タップした場所にランテくんがうごくよ</p>
-    <button @click="toGame">START</button>
+    <button @click="toGame" class="btn">START</button>
   </div>
-  <img src="../../public/img/rantekunn-mozaiku-lgtm.svg">
+  <img src="../../public/img/rantekunn-mozaiku-lgtm.svg" class="rantekunn">
 </template>
 <script>
 import playSound from '../assets/playSound'
@@ -20,8 +20,8 @@ export default {
   }
 }
 </script>
-<style scoped>
-button {
+<style>
+.btn {
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.5;
@@ -41,5 +41,9 @@ button {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
+}
+.rantekunn {
+  max-width: 100%;
+  height: auto;
 }
 </style>

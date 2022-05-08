@@ -31,8 +31,11 @@ export default {
     count: function() {
       if (this.sec <= 0) {
         this.complete();
-      } else if (this.sec === 10){
-        window.confirm("Tシャツが取れないのは仕様です");
+      } else if (this.sec <= 10){
+        if (!this.isConfirmed) {
+          window.confirm("Tシャツが取れないのは仕様です");
+          this.isConfirmed = true;
+        }
         this.sec --;
       }
       else {

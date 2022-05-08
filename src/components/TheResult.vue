@@ -4,10 +4,10 @@
     <strong>
       さむいよ
     </strong>
-    <img src="../../public/img/rantekun-angry.png">
+    <img src="../../public/img/rantekun-angry.png" class="rantekunn">
   </div>
   <div class="buruburu" v-if="isCrack">
-    <img src="../../public/img/rantekunn_crack.png">
+    <img src="../../public/img/rantekunn_crack.png" class="rantekunn">
     <RandomFalls
         :speed="500"
         :max="100" 
