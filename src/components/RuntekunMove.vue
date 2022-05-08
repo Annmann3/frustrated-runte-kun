@@ -16,7 +16,7 @@
     :ox="50" :oy="100"
   />
   <RandomFalls
-          :speed="300"
+          :speed="200"
           :max="50" 
           :interval="400"
           class="text-6xl opacity-50" 
@@ -26,11 +26,11 @@
           :max="10" 
           :interval="1000"
           class="text-6xl opacity-50" 
-          >Tシャツ欲しい~</RandomFalls>
+          >🥺</RandomFalls>
   <RandomFalls
           :speed="300"
           :max="5" 
-          :interval="1000"
+          :interval="2000"
           class="text-6xl opacity-50" 
           ><img src="../../public/img/party_parrot.gif"></RandomFalls>
 </template>
@@ -88,15 +88,15 @@ export default {
   background-image: url("../../public/img/ranteT.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 .item-count {
   display: inline-block;
   padding-bottom: 5px;
 }
 img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 </style>

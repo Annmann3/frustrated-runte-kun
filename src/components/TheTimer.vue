@@ -19,18 +19,23 @@ export default {
       sec: 20,
       timerOn: false,
       timerObj: null,
+      isConfirmed: false
     }
   },
   mounted() {
     this.$nextTick(function () {
       this.start();
-  })
+    })
   },
   methods: {
     count: function() {
       if (this.sec <= 0) {
         this.complete();
-      } else {
+      } else if (this.sec === 10){
+        window.confirm("Tシャツが取れないのは仕様です");
+        this.sec --;
+      }
+      else {
         this.sec --;
       }
     },

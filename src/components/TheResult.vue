@@ -1,20 +1,20 @@
 <template>
-  <p>{{score}}点でした終わり</p>
-  <div class="buruburu">
-    怒りのランテくん 
+  <h2>{{score}}点</h2>
+  <div class="buruburu" v-if="!isCrack">
+    <strong>
+      さむいよ
+    </strong>
+    <img src="../../public/img/rantekun-angry.png">
   </div>
-  <div class="buruburu">
+  <div class="buruburu" v-if="isCrack">
     <img src="../../public/img/rantekunn_crack.png">
     <RandomFalls
         :speed="500"
-        :max="40" 
+        :max="100" 
         :interval="100"
         class="text-6xl opacity-50" 
         ><img src="../../public/img/party_parrot.gif"></RandomFalls>
   </div>
-  <router-link to="/">TOPページへ</router-link>
-
-  
 </template>
 <script>
 import RandomFalls from './RandomFalls.vue'
@@ -26,7 +26,40 @@ export default {
   },
   data () {
     return {
-    score: 0
+      score: 0,
+      angrySec: 10,
+      isCrack: false,
+      time: ""
+    }
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.start();
+    })
+  },
+  methods: {
+    count: function() {
+      if (this.angrySec <= 0) {
+        this.alert();
+      } else if (this.angrySec <= 5) {
+        this.complete();
+        this.angrySec --;
+      }
+      else {
+        this.angrySec --;
+      }
+    },
+    start: function() {
+      let self = this;
+      this.time = setInterval(function() {self.count()}, 1000)
+    },
+    complete: function() {
+      this.isCrack = true;
+    },
+    alert: function() {
+      clearInterval(this.time);
+      window.alert("らんてくんから攻撃を受けました。強制終了します。");
+      this.$router.push("/");
     }
   }
 }
@@ -34,7 +67,10 @@ export default {
 //警告のコンソールを表示させる処理
 
 </script>
-<style>
+<style scoped>
+img {
+  z-index: 1;
+}
 .buruburu {
     display: inline-block;
     animation: hurueru .1s  infinite;
